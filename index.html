@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Aryans Racing | Official BAJA SAE Team - GECA</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts: Wide motorsport font (Orbitron / Chakra Petch) + Clean Sans & Telemetry Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,700&family=JetBrains+Mono:wght@500;700&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#D91A2A',       /* Racing Red */
+              redDark: '#B31422',
+              black: '#000000',     /* Pure Deep Black */
+              darkSurface: '#121620',
+              lightGray: '#F8F9FA', /* Clean Section BG */
+              borderGray: '#E5E7EB',
+              textDark: '#1F2937',  /* Crisp readable dark text */
+              textMuted: '#4B5563'
+            }
+          },
+          fontFamily: {
+            sofachrome: ['Orbitron', 'Chakra Petch', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+   /* Load local Sofachrome font from assets/fonts/ */
+  @font-face {
+    font-family: 'Sofachrome';
+    src: url('assets/fonts/sofachrome.otf') format('opentype'),
+         url('assets/fonts/sofachrome.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .font-sofachrome {
+    font-family: 'Sofachrome', 'Orbitron', 'Chakra Petch', sans-serif;
+    letter-spacing: 0.05em;
+  }
+    body {
+      background-color: #FFFFFF;
+      color: #1F2937;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .sofachrome-title {
+      font-family: 'Orbitron', 'Chakra Petch', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+    .nav-active {
+      color: #D91A2A !important;
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-red selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- ========================================================
+       TOP HEADER TICKER BAR (EXACT MATCH TO SCREENSHOT)
+       ======================================================== -->
+  <div class="bg-[#181818] text-[#cccccc] text-[13px] py-2 px-6 sm:px-12 border-b border-zinc-800/80">
+    <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+      <!-- Left: Mail address with grey envelope icon -->
+      <a href="mailto:teamaryans@geca.ac.in" class="flex items-center gap-2 hover:text-white transition-colors">
+        <i data-lucide="mail" class="w-4 h-4 text-zinc-400"></i>
+        <span>teamaryans@geca.ac.in</span>
+      </a>
+
+      <!-- Right: Social icons in solid square boxes (Facebook, Instagram, YouTube, LinkedIn) -->
+      <div class="flex items-center gap-3">
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded bg-white text-black flex items-center justify-center hover:opacity-80 transition-opacity">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded bg-white text-black flex items-center justify-center hover:opacity-80 transition-opacity">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded bg-white text-black flex items-center justify-center hover:opacity-80 transition-opacity">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded bg-white text-black flex items-center justify-center hover:opacity-80 transition-opacity">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MAIN HEADER / NAVBAR (EXACT MATCH TO SCREENSHOT)
+       ======================================================== -->
+ <!-- ========================================================
+       MAIN HEADER / NAVBAR (DESKTOP + MOBILE HAMBURGER MENU)
+       ======================================================== -->
+  <header class="sticky top-0 z-50 bg-[#000000] border-b border-zinc-900 shadow-md">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
+      
+      <!-- Brand Logo + Team Name in Sofachrome font -->
+      <a href="javascript:void(0)" onclick="switchPage('home')" class="flex items-center gap-3 group py-1">
+        <img 
+          id="brand-logo" 
+          src="assets/images/logo.jpg" 
+          alt="Team Aryans Logo" 
+          class="w-12 h-12 sm:w-16 sm:h-16 aspect-square object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
+          onerror="
+            if (!this.triedPng) { 
+              this.triedPng = true; 
+              this.src='assets/images/logo.png'; 
+            }
+          "
+        />
+        <div class="flex flex-col justify-center">
+          <span class="font-sofachrome text-xs sm:text-base lg:text-lg text-white font-extrabold uppercase leading-none tracking-wide">
+            TEAM ARYANS <span class="text-brand-red">RACING</span>
+          </span>
+          <span class="text-[8px] sm:text-[10px] font-mono text-zinc-400 uppercase tracking-widest mt-1">
+            GECA BAJA SAE MOTORSPORT
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu (Visible on lg screens and up) -->
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-normal tracking-wide text-white font-mono">
+        <button onclick="switchPage('home')" id="nav-home" class="nav-link nav-active uppercase hover:text-brand-red transition-colors">HOME</button>
+        
+        <!-- ABOUT dropdown -->
+        <div class="relative group py-2">
+          <button class="flex items-center gap-1.5 uppercase hover:text-brand-red transition-colors">
+            <span>ABOUT</span>
+            <span class="text-[10px]">▼</span>
+          </button>
+          <div class="absolute left-0 mt-3 w-56 bg-black border border-zinc-800 rounded-lg shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+            <button onclick="switchPage('about-sae')" class="w-full text-left px-3 py-2 rounded text-xs text-zinc-300 hover:bg-brand-red/10 hover:text-brand-red transition-colors block">About SAE & GECA</button>
+            <button onclick="switchPage('about-vehicle')" class="w-full text-left px-3 py-2 rounded text-xs text-zinc-300 hover:bg-brand-red/10 hover:text-brand-red transition-colors block">About Vehicle</button>
+            <button onclick="switchPage('our-team')" class="w-full text-left px-3 py-2 rounded text-xs text-zinc-300 hover:bg-brand-red/10 hover:text-brand-red transition-colors block">Our Team</button>
+            <button onclick="switchPage('awards')" class="w-full text-left px-3 py-2 rounded text-xs text-zinc-300 hover:bg-brand-red/10 hover:text-brand-red transition-colors block">Awards & Recognition</button>
+          </div>
+        </div>
+
+        <button onclick="switchPage('sponsors')" id="nav-sponsors" class="nav-link uppercase hover:text-brand-red transition-colors">SPONSORS</button>
+        <button onclick="switchPage('gallery')" id="nav-gallery" class="nav-link uppercase hover:text-brand-red transition-colors">GALLERY</button>
+        <button onclick="switchPage('news')" id="nav-news" class="nav-link hover:text-brand-red transition-colors">News & Updates</button>
+        <button onclick="switchPage('contact')" id="nav-contact" class="nav-link uppercase hover:text-brand-red transition-colors">CONTACT US</button>
+      </nav>
+
+      <!-- Mobile Hamburger Button (Visible only on mobile/tablets) -->
+      <button 
+        type="button" 
+        onclick="toggleMobileMenu()" 
+        aria-label="Toggle navigation menu"
+        class="lg:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-white hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red transition-colors"
+      >
+        <i id="mobile-menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Slide-Down Menu Drawer -->
+    <div id="mobile-nav-drawer" class="hidden lg:hidden bg-black/98 border-b border-zinc-800 px-6 py-4 space-y-3 font-mono text-sm shadow-2xl">
+      <button onclick="handleMobileNav('home')" class="w-full text-left py-2 border-b border-zinc-900 text-white font-bold hover:text-brand-red flex items-center justify-between">
+        <span>HOME</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
+      </button>
+
+      <!-- Mobile About Accordion -->
+      <div class="border-b border-zinc-900 pb-2">
+        <button onclick="toggleMobileAboutSubmenu()" class="w-full text-left py-2 text-white font-bold hover:text-brand-red flex items-center justify-between">
+          <span>ABOUT</span>
+          <span id="mobile-about-arrow" class="text-xs text-zinc-500">▼</span>
+        </button>
+        <div id="mobile-about-submenu" class="hidden pl-4 py-2 space-y-2 text-xs text-zinc-400">
+          <button onclick="handleMobileNav('about-sae')" class="block w-full text-left py-1 hover:text-white">About SAE & GECA</button>
+          <button onclick="handleMobileNav('about-vehicle')" class="block w-full text-left py-1 hover:text-white">About Vehicle</button>
+          <button onclick="handleMobileNav('our-team')" class="block w-full text-left py-1 hover:text-white">Our Team</button>
+          <button onclick="handleMobileNav('awards')" class="block w-full text-left py-1 hover:text-white">Awards & Recognition</button>
+        </div>
+      </div>
+
+      <button onclick="handleMobileNav('sponsors')" class="w-full text-left py-2 border-b border-zinc-900 text-white font-bold hover:text-brand-red flex items-center justify-between">
+        <span>SPONSORS</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
+      </button>
+
+      <button onclick="handleMobileNav('gallery')" class="w-full text-left py-2 border-b border-zinc-900 text-white font-bold hover:text-brand-red flex items-center justify-between">
+        <span>GALLERY</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
+      </button>
+
+      <button onclick="handleMobileNav('news')" class="w-full text-left py-2 border-b border-zinc-900 text-white font-bold hover:text-brand-red flex items-center justify-between">
+        <span>NEWS & UPDATES</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
+      </button>
+
+      <button onclick="handleMobileNav('contact')" class="w-full text-left py-2 text-brand-red font-bold flex items-center justify-between">
+        <span>CONTACT US</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-red"></i>
+      </button>
+    </div>
+  </header>
+
+ <!-- ========================================================
+       HERO BANNER IMAGE (MOBILE-RESPONSIVE FIX)
+       ======================================================== -->
+  <section class="relative w-full overflow-hidden bg-black border-b-4 border-brand-red">
+    <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] md:h-[480px] lg:h-[540px]">
+      <!-- The Banner Image: Responsively scaled with right-bias positioning -->
+      <img 
+        id="hero-banner-img"
+        src="assets/images/banner.jpg" 
+        alt="Team Aryans Racing Banner" 
+        class="w-full h-full object-cover object-center sm:object-[75%_center] filter brightness-95 contrast-105"
+        onerror="
+          if (!this.triedPng) { 
+            this.triedPng = true; 
+            this.src='assets/images/banner.png'; 
+          }
+        "
+      />
+      
+      <!-- Subtle Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+      <!-- Banner Caption Overlay (Responsive Font Sizes for Mobile) -->
+      <div class="absolute bottom-3 sm:bottom-8 left-4 sm:left-10 max-w-4xl z-10 pr-4">
+        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-0.5 sm:py-1 rounded bg-brand-red text-white text-[9px] sm:text-[11px] font-mono font-bold tracking-widest uppercase mb-1.5 shadow-sm">
+          <span>BAJA SAE INDIA</span>
+          <span>•</span>
+          <span>GECA MOTORSPORT</span>
+        </div>
+        <h2 class="font-sofachrome text-xs sm:text-2xl md:text-3xl text-white font-extrabold uppercase tracking-wide drop-shadow-md leading-tight">
+          STRIVING FOR <span class="text-brand-red">EXCELLENCE</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PAGE CONTENT CONTAINER
+       ======================================================== -->
+  <main id="app-container" class="flex-grow">
+
+    <!-- PAGE 1: HOME PAGE -->
+    <div id="page-home" class="page-view">
+      
+      <!-- HERO: Bold Black Canvas with White text and Racing Red highlights -->
+      <section class="bg-brand-black text-white pt-24 pb-20 border-b-4 border-brand-red">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-brand-red text-white text-xs font-mono font-bold uppercase tracking-wider">
+              <i data-lucide="flag" class="w-3.5 h-3.5"></i> Striving For Excellence
+            </div>
+            <h1 class="sofachrome-title text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+              TEAM ARYANS <span class="text-brand-red">RACING</span>
+            </h1>
+            <p class="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+              Official BAJA SAE racing team of Government College of Engineering, Chhatrapati Sambhajinagar. Building robust off-road vehicles for national & international championships.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <button onclick="switchPage('about-vehicle')" class="px-6 py-3 rounded-lg bg-brand-red text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-brand-redDark shadow-lg transition-all flex items-center gap-2">
+                <span>View Vehicle Innovations</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <button onclick="switchPage('our-team')" class="px-6 py-3 rounded-lg bg-white text-brand-black hover:bg-zinc-100 text-xs font-mono font-bold uppercase tracking-wider transition-all border border-zinc-200">
+                Meet The Team
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Telemetry Card -->
+          <div class="lg:col-span-5">
+            <div class="p-6 rounded-xl bg-brand-darkSurface border border-zinc-800 shadow-2xl">
+              <div class="flex justify-between items-center pb-3 border-b border-zinc-800 text-xs font-mono text-zinc-400">
+                <span>VEHICLE TELEMETRY</span>
+                <span class="bg-brand-red text-white px-2 py-0.5 rounded text-[10px] font-bold">AIR 4 (2024)</span>
+              </div>
+              <div class="aspect-video w-full my-4 rounded-lg bg-black border border-zinc-800 flex flex-col items-center justify-center p-6 text-center">
+                <i data-lucide="car" class="w-16 h-16 text-brand-red mb-3"></i>
+                <span class="sofachrome-title text-sm text-white">ALL-TERRAIN BUGGY</span>
+                <span class="text-xs text-zinc-400 font-mono mt-1">Two-Stage Constant Mesh Powertrain</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 text-center font-mono">
+                <div class="p-3 rounded-lg bg-black border border-zinc-800">
+                  <span class="text-zinc-400 block text-[10px]">DURABILITY</span>
+                  <span class="text-brand-red font-bold text-base">AIR 2nd</span>
+                </div>
+                <div class="p-3 rounded-lg bg-black border border-zinc-800">
+                  <span class="text-zinc-400 block text-[10px]">CAE SIMULATION</span>
+                  <span class="text-brand-red font-bold text-base">AIR 4th</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VEHICLE INNOVATIONS -->
+      <section class="py-20 bg-brand-lightGray border-b border-brand-borderGray">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-brand-red font-mono text-xs uppercase tracking-widest block font-bold mb-1">// Engineered At GECA</span>
+            <h2 class="sofachrome-title text-2xl sm:text-3xl text-brand-black">VEHICLE INNOVATIONS</h2>
+            <div class="w-16 h-1 bg-brand-red mx-auto mt-3"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Caliper -->
+            <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm hover:border-brand-red hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-brand-red mb-4">
+                  <i data-lucide="disc" class="w-6 h-6"></i>
+                </div>
+                <h3 class="sofachrome-title text-sm text-brand-black mb-2">CUSTOM BRAKE CALIPER</h3>
+                <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                  Customized single piston floating caliper was manufactured for compact assembly packaging. Further, it had orientated bleed position which resolved bleeding issues.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-brand-red uppercase font-bold">Brakes Subsystem</span>
+            </div>
+
+            <!-- Gearbox -->
+            <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm hover:border-brand-red hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-brand-red mb-4">
+                  <i data-lucide="cog" class="w-6 h-6"></i>
+                </div>
+                <h3 class="sofachrome-title text-sm text-brand-black mb-2">CONSTANT REDUCTION GEARBOX</h3>
+                <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                  Two-stage constant mesh reduction gearbox was used to obtain required torque and speed. On another hand, it also improved vehicle performance, space, and weight.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-brand-red uppercase font-bold">Transmission Division</span>
+            </div>
+
+            <!-- Trailing Arm -->
+            <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm hover:border-brand-red hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-brand-red mb-4">
+                  <i data-lucide="activity" class="w-6 h-6"></i>
+                </div>
+                <h3 class="sofachrome-title text-sm text-brand-black mb-2">TRAILING ARM GEOMETRY</h3>
+                <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                  Firstly, successfully achieved prerequisite vehicle design parameters. Secondly, providing more comfort to the driver due to the better suspension system.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-brand-red uppercase font-bold">Vehicle Dynamics</span>
+            </div>
+
+            <!-- Drivetrain -->
+            <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm hover:border-brand-red hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-brand-red mb-4">
+                  <i data-lucide="zap" class="w-6 h-6"></i>
+                </div>
+                <h3 class="sofachrome-title text-sm text-brand-black mb-2">CUSTOMIZED DRIVETRAIN</h3>
+                <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                  Used constant Velocity universal coupling with telescopic ball spine and hollow axle.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-brand-red uppercase font-bold">Powertrain</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEPARTMENTS -->
+      <section class="py-16 bg-white border-b border-brand-borderGray">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex items-center justify-between mb-8 pb-3 border-b-2 border-brand-black">
+            <h3 class="sofachrome-title text-lg text-brand-black">DEPARTMENTS</h3>
+            <span class="text-xs font-mono text-brand-red font-bold">6 TECHNICAL DIVISIONS</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 font-mono text-center">
+            <div class="p-4 rounded-lg bg-brand-lightGray border border-brand-borderGray hover:border-brand-red transition-all">
+              <span class="text-brand-black block font-bold text-sm">ROLLCAGE</span>
+              <span class="text-[10px] text-brand-red font-semibold">Chassis Frame</span>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-lightGray border border-brand-borderGray hover:border-brand-red transition-all">
+              <span class="text-brand-black block font-bold text-sm">TRANSMISSION</span>
+              <span class="text-[10px] text-brand-red font-semibold">Gearbox & CVT</span>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-lightGray border border-brand-borderGray hover:border-brand-red transition-all">
+              <span class="text-brand-black block font-bold text-sm">SUSPENSION</span>
+              <span class="text-[10px] text-brand-red font-semibold">Arms & Geometry</span>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-lightGray border border-brand-borderGray hover:border-brand-red transition-all">
+              <span class="text-brand-black block font-bold text-sm">STEERING</span>
+              <span class="text-[10px] text-brand-red font-semibold">Rack & Geometry</span>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-lightGray border border-brand-borderGray hover:border-brand-red transition-all">
+              <span class="text-brand-black block font-bold text-sm">BRAKES</span>
+              <span class="text-[10px] text-brand-red font-semibold">Hydraulics & Calipers</span>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-lightGray border border-brand-borderGray hover:border-brand-red transition-all">
+              <span class="text-brand-black block font-bold text-sm">DATA ACQ.</span>
+              <span class="text-[10px] text-brand-red font-semibold">Sensors & Telemetry</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPTAIN'S STATEMENTS -->
+      <section class="py-20 bg-brand-black text-white border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-xl mx-auto mb-14">
+            <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Leadership Insights</span>
+            <h2 class="sofachrome-title text-2xl sm:text-3xl text-white mt-1">LEADERSHIP STATEMENTS</h2>
+            <div class="w-16 h-1 bg-brand-red mx-auto mt-3"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Captain -->
+            <div class="p-8 rounded-xl bg-brand-darkSurface border border-zinc-800 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-zinc-800 font-mono text-xs">
+                  <span class="text-brand-red font-bold uppercase">CAPTAIN'S STATEMENT</span>
+                  <span class="text-zinc-400">Baja Season 2026</span>
+                </div>
+                <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+                  "I'm Aditya Chaudhari, a 4th Year mechanical engineer. I am delighted to get this opportunity to represent and lead The Team Aryans Racing for the year 2024-25. It is truly said that <span class="text-white font-semibold">'Every bad situation will have something positive. Even a dead clock shows correct time twice a day'</span>. Considering my case itself I have struggled a lot while starting the team, in this severe pandemic I was left only with a single experienced collugue but though the positive side for this was I got an enthusiastic and passionate team that coordinated very well. Starting from zero that too in online mode, it was a tough task but now we have been getting over the things and making our journey more smooth by fighting together with all the difficulties. Hope we will similarly continue to follow our plan and achieve our goal of a podium finish - AIR 1 by working harder and harder and confronting all the issues."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 pt-4 border-t border-zinc-800">
+                <div class="w-10 h-10 rounded bg-brand-red text-white flex items-center justify-center font-bold font-mono text-sm">BC</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Aditya Chaudhari</h4>
+                  <span class="text-xs text-zinc-400 font-mono">Captain • 4th Year Mechanical</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Former Captain -->
+            <div class="p-8 rounded-xl bg-brand-darkSurface border border-zinc-800 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-zinc-800 font-mono text-xs">
+                  <span class="text-zinc-400 font-bold uppercase">FORMER CAPTAIN'S STATEMENT</span>
+                  <span class="text-zinc-400">Baja Season 2025</span>
+                </div>
+                <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+                  "I'm Bhuvanesh Chaudhari, a 4th Year mechanical engineer. I am delighted to get this opportunity to represent and lead The Team Aryans Racing for the year 2024-25. It is truly said that <span class="text-white font-semibold">'Every bad situation will have something positive. Even a dead clock shows correct time twice a day'</span>. Considering my case itself I have struggled a lot while starting the team, in this severe pandemic I was left only with a single experienced collugue but though the positive side for this was I got an enthusiastic and passionate team that coordinated very well. Starting from zero that too in online mode, it was a tough task but now we have been getting over the things and making our journey more smooth by fighting together with all the difficulties. Hope we will similarly continue to follow our plan and achieve our goal of a podium finish - AIR 1 by working harder and harder and confronting all the issues."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 pt-4 border-t border-zinc-800">
+                <div class="w-10 h-10 rounded bg-zinc-700 text-white flex items-center justify-center font-bold font-mono text-sm">SP</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Bhuvanesh Chaudhari</h4>
+                  <span class="text-xs text-zinc-400 font-mono">Former Captain • B.Tech Mechanical</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <!-- ACHIEVEMENTS (WITH NEW LATEST ROW AT TOP) -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 pb-4 border-b border-brand-borderGray">
+            <div>
+              <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Season Record & Trophies</span>
+              <h2 class="font-sofachrome text-2xl sm:text-3xl text-brand-black mt-1">OUR ACHIEVEMENTS</h2>
+            </div>
+            <button onclick="switchPage('awards')" class="text-xs font-mono font-bold text-brand-red hover:underline flex items-center gap-1">
+              <span>View Full Trophy Cabinet</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- 6-CARD GRID (Top Row = 3 Latest Achievements, Bottom Row = Historical Legacies) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- ================= NEW ROW: LATEST ACHIEVEMENT 1 ================= -->
+            <div class="p-6 rounded-xl bg-brand-lightGray border-t-4 border-brand-red border-x border-b border-brand-borderGray shadow-sm hover:shadow-md transition-all relative">
+              <span class="absolute top-4 right-4 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-red text-white uppercase tracking-wider">LATEST</span>
+              <span class="text-xs font-mono font-bold text-brand-red uppercase">BAJA SAE INDIA 2025–26</span>
+              <h3 class="font-sofachrome text-base sm:text-lg text-brand-black mt-2 mb-2">AIR 1 SECURED</h3>
+              <p class="text-brand-textMuted text-xs leading-relaxed">
+                Secured 1st place nationally in Engineering Design, recognizing our team’s excellence in vehicle design, engineering analysis, innovation, and technical execution.
+              </p>
+            </div>
+
+            <!-- ================= NEW ROW: LATEST ACHIEVEMENT 2 ================= -->
+            <div class="p-6 rounded-xl bg-brand-lightGray border-t-4 border-brand-black border-x border-b border-brand-borderGray shadow-sm hover:shadow-md transition-all relative">
+              <span class="absolute top-4 right-4 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-black text-white uppercase tracking-wider">LATEST</span>
+              <span class="text-xs font-mono font-bold text-brand-black uppercase">BAJA SAE INDIA 2025–26</span>
+              <h3 class="font-sofachrome text-base sm:text-lg text-brand-black mt-2 mb-2">AIR 3 Secured</h3>
+              <p class="text-brand-textMuted text-xs leading-relaxed">
+               Secured 3rd place nationally in the Durability Event, demonstrating the vehicle’s reliability, robustness, and performance under demanding operating conditions.
+              </p>
+            </div>
+
+            <!-- ================= NEW ROW: LATEST ACHIEVEMENT 3 ================= -->
+            <div class="p-6 rounded-xl bg-brand-lightGray border-t-4 border-brand-red border-x border-b border-brand-borderGray shadow-sm hover:shadow-md transition-all relative">
+              <span class="absolute top-4 right-4 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-red text-white uppercase tracking-wider">LATEST</span>
+              <span class="text-xs font-mono font-bold text-brand-red uppercase">DESIGN / INNOVATION</span>
+              <h3 class="font-sofachrome text-base sm:text-lg text-brand-black mt-2 mb-2">BEST DEBUTANT TEAM AWARD</h3>
+              <p class="text-brand-textMuted text-xs leading-relaxed">
+                Recognized as the Best New/First-Time Team in the 2025 eBAJA season, marking Team Aryans Racing’s debut in electric BAJA.
+              </p>
+            </div>
+
+            <!-- ================= ROW 2: PREVIOUS ACHIEVEMENTS (PRESERVED) ================= -->
+            <!-- BAJA SAE 2024 -->
+            <div class="p-6 rounded-xl bg-brand-lightGray border-t-4 border-brand-red border-x border-b border-brand-borderGray">
+              <span class="text-xs font-mono font-bold text-brand-red uppercase">BAJA SAE 2024</span>
+              <h3 class="font-sofachrome text-base sm:text-lg text-brand-black mt-2 mb-2">AIR 4 SECURED</h3>
+              <p class="text-brand-textMuted text-xs leading-relaxed">
+                This year we Secure the AIR 4 in BAJA SAE 2024 event. We maintained our legacy by adding AIR 2nd in Durability and AIR 4th in CAE event.
+              </p>
+            </div>
+
+            <!-- Global Debut -->
+            <div class="p-6 rounded-xl bg-brand-lightGray border-t-4 border-brand-black border-x border-b border-brand-borderGray">
+              <span class="text-xs font-mono font-bold text-brand-black uppercase">GLOBAL DEBUT</span>
+              <h3 class="font-sofachrome text-base sm:text-lg text-brand-black mt-2 mb-2">INTERNATIONAL RESULT</h3>
+              <p class="text-brand-textMuted text-xs leading-relaxed">
+                For the very first time, Team Aryans participated in BAJA SAE International. Secured 7th in Sales, 10th in Acceleration, and 11th in Design.
+              </p>
+            </div>
+
+            <!-- National Endurance -->
+            <div class="p-6 rounded-xl bg-brand-lightGray border-t-4 border-brand-red border-x border-b border-brand-borderGray">
+              <span class="text-xs font-mono font-bold text-brand-red uppercase">NATIONAL ENDURANCE</span>
+              <h3 class="font-sofachrome text-base sm:text-lg text-brand-black mt-2 mb-2">3RD GRID POSITION</h3>
+              <p class="text-brand-textMuted text-xs leading-relaxed">
+                In 2019, Team Aryans stood at 3rd grid position in endurance race and Artemis achieved the title of being India's First Rockcrawler.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- PAGE 2: ABOUT SAE & GECA -->
+    <div id="page-about-sae" class="page-view hidden py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-6 space-y-12">
+        <div class="border-b-2 border-brand-black pb-4">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Autonomous Institute</span>
+          <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">GOVERNMENT COLLEGE OF ENGINEERING AURANGABAD</h1>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-lightGray border border-brand-borderGray space-y-4 text-xs sm:text-sm text-brand-textDark leading-relaxed">
+          <p>
+            Government College OF Engineering Aurangabad an Autonomous Engineering Institute of Government of Maharashtra is promoting and educating the engineering students with a passion of learning since 1960. The college is well versed with highly qualified staff and good educational facilities. The college also encourages students for higher education and helps them for the same.
+          </p>
+          <p>
+            At the same time it has pushed the students in the extra-curricular activities as well for the overall development of every student. It organizes various technical events for letting the students have exposure to the practical world. It has a glorious history of 58 years and strives to maintain the same.
+          </p>
+          <div class="pt-2">
+            <a href="https://www.geca.ac.in/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-brand-red hover:underline">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> https://www.geca.ac.in/
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-red border-x border-b border-brand-borderGray">
+            <h3 class="sofachrome-title text-sm text-brand-black mb-3">VISION</h3>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              In pursuit of global competitiveness, the institute is committed to excel in engineering education and research with concern for environment and society.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-black border-x border-b border-brand-borderGray">
+            <h3 class="sofachrome-title text-sm text-brand-black mb-3">MISSION</h3>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              To provide a conductive environment for academic excellence in engineering education. To enhance research and development along with a promotion to sponsored projects and industrial consultancy. To foster the development of students by creating awareness for the need of society, sustainable development and human values.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 3: ABOUT VEHICLE -->
+    <div id="page-about-vehicle" class="page-view hidden py-20 bg-brand-lightGray">
+      <div class="max-w-6xl mx-auto px-6 space-y-10">
+        <div class="border-b-2 border-brand-black pb-4">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Technical Subsystems</span>
+          <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">ABOUT VEHICLE</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm space-y-3">
+            <span class="text-xs font-mono text-brand-red font-bold">CUSTOMIZED BRAKE CALIPER</span>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              Customized single piston floating caliper was manufactured for compact assembly packaging. Further, it had orientated bleed position which resolved bleeding issues.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm space-y-3">
+            <span class="text-xs font-mono text-brand-red font-bold">CONSTANT REDUCTION GEARBOX</span>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              Two-stage constant mesh reduction gearbox was used to obtain required torque and speed. On another hand, it also improved vehicle performance, space, and weight.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm space-y-3">
+            <span class="text-xs font-mono text-brand-red font-bold">TRAILING ARM GEOMETRY</span>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              Firstly, successfully achieved prerequisite vehicle design parameters. Secondly, providing more comfort to the driver due to the better suspension system.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm space-y-3">
+            <span class="text-xs font-mono text-brand-red font-bold">CUSTOMIZED DRIVETRAIN</span>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              Used constant Velocity universal coupling with telescopic ball spine and hollow axle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 4: OUR TEAM -->
+    <div id="page-our-team" class="page-view hidden py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 space-y-12">
+        <div class="border-b-2 border-brand-black pb-4 text-center max-w-2xl mx-auto">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Human Engineering</span>
+          <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">OUR TEAM</h1>
+          <p class="text-xs text-brand-textMuted mt-2">
+            Technical education in today's world occupies increasingly greater space and interest and hence required to be nurtured. All aspiring engineers shall awaken to remain sensitive and keep themselves abreast of developments in technology with growing awareness.
+          </p>
+        </div>
+
+        <!-- Captain & Core Managers -->
+        <!-- Captain & Vice-Captain (Focused 2-Card Leadership Desk) -->
+        <div class="space-y-6 max-w-4xl mx-auto">
+          <div class="text-center">
+            <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Executive Helm</span>
+            <h3 class="font-sofachrome text-lg sm:text-xl text-brand-black mt-1">TEAM LEADERSHIP</h3>
+            <div class="w-12 h-1 bg-brand-red mx-auto mt-2"></div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- CAPTAIN -->
+            <div class="p-6 rounded-2xl bg-brand-lightGray border-2 border-brand-red text-center shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-between">
+              <div class="w-full">
+                <!-- Avatar / Initials / Photo Container -->
+                <div class="w-16 h-16 mx-auto rounded-full bg-brand-red text-white flex items-center justify-center font-mono font-bold text-lg mb-4 shadow-md">
+                  AC
+                </div>
+                <h4 class="font-bold text-brand-black text-base">Aditya Chaudhari</h4>
+                <p class="text-xs text-brand-textMuted font-mono mt-0.5">4th Year Mechanical Engineering</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-brand-borderGray w-full">
+                <span class="inline-block px-3 py-1 rounded bg-brand-red text-white text-[11px] font-mono font-bold tracking-widest uppercase">
+                  CAPTAIN
+                </span>
+              </div>
+            </div>
+
+            <!-- VICE-CAPTAIN -->
+            <div class="p-6 rounded-2xl bg-brand-lightGray border border-brand-borderGray hover:border-brand-black text-center shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-between">
+              <div class="w-full">
+                <!-- Avatar / Initials / Photo Container -->
+                <div class="w-16 h-16 mx-auto rounded-full bg-brand-black text-white flex items-center justify-center font-mono font-bold text-lg mb-4 shadow-md">
+                  OD
+                </div>
+                <h4 class="font-bold text-brand-black text-base">Omkar Dhumal</h4>
+                <p class="text-xs text-brand-textMuted font-mono mt-0.5">3rd Year Electronics and Telecommunication Engineering</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-brand-borderGray w-full">
+                <span class="inline-block px-3 py-1 rounded bg-brand-black text-white text-[11px] font-mono font-bold tracking-widest uppercase">
+                  VICE-CAPTAIN
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <!-- Subsystems Division Members -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+          <!-- Rollcage -->
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <span class="text-xs font-mono text-brand-red uppercase block mb-3 font-bold">ROLLCAGE</span>
+            <ul class="text-xs text-brand-textDark space-y-2">
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Ojas Bankar</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD</span>
+              </li>
+              
+              
+            </ul>
+          </div>
+
+          <!-- Transmission -->
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <span class="text-xs font-mono text-brand-red uppercase block mb-3 font-bold">ELECTRIC POWERTRAIN & TRANSMISSION</span>
+            <ul class="text-xs text-brand-textDark space-y-2">
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Omkar Dhumal</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD</span>
+              </li>
+              <li>Khushi Pande</li>
+              <li>Vansh Age</li>
+             
+            </ul>
+          </div>
+
+          <!-- Vehicle Dynamics -->
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <span class="text-xs font-mono text-brand-red uppercase block mb-3 font-bold">VEHICLE DYNAMICS</span>
+            <ul class="text-xs text-brand-textDark space-y-2">
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Ishan Mahajan</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD</span>
+              </li>
+              <li>Supriya Mortule</li>
+              
+              
+            </ul>
+          </div>
+
+          <!-- Brakes & CAE -->
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <span class="text-xs font-mono text-brand-red uppercase block mb-3 font-bold">BRAKES & CVT</span>
+            <ul class="text-xs text-brand-textDark space-y-2">
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Pramod Godase</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD (BRAKES)</span>
+              </li>
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Supriya Mortule</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD (CAE)</span>
+              </li>
+              
+            </ul>
+          </div>
+
+          <!-- Data Acquisition -->
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <span class="text-xs font-mono text-brand-red uppercase block mb-3 font-bold">DATA ACQUISITION</span>
+            <ul class="text-xs text-brand-textDark space-y-2">
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Khushi Pande</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD</span>
+              </li>
+              
+            </ul>
+          </div>
+
+          <!-- Documentation -->
+          <div class="p-6 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <span class="text-xs font-mono text-brand-red uppercase block mb-3 font-bold">MANUFACTURING</span>
+            <ul class="text-xs text-brand-textDark space-y-2">
+              <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Ishan Mahajan</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD(OUTHOUSE)</span>
+              </li>
+               <li class="flex items-center justify-between pb-1 border-b border-brand-borderGray">
+                <span class="font-bold text-brand-black">Ojas Bankar</span>
+                <span class="text-brand-red font-mono font-bold text-[10px]">HEAD(INHOUSE)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 5: AWARDS & RECOGNITION -->
+    <div id="page-awards" class="page-view hidden py-20 bg-brand-lightGray">
+      <div class="max-w-6xl mx-auto px-6 space-y-10">
+        <div class="border-b-2 border-brand-black pb-4">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Accolades</span>
+          <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">AWARDS & RECOGNITION</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-red border-x border-b border-brand-borderGray shadow-sm">
+            <span class="text-3xl font-mono font-extrabold text-brand-red block mb-1">AIR 4</span>
+            <h4 class="sofachrome-title text-xs text-brand-black mb-2">OVERALL RANK (2024)</h4>
+            <p class="text-xs text-brand-textMuted">BAJA SAE India 2024 overall event ranking.</p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-black border-x border-b border-brand-borderGray shadow-sm">
+            <span class="text-3xl font-mono font-extrabold text-brand-black block mb-1">AIR 2nd</span>
+            <h4 class="sofachrome-title text-xs text-brand-black mb-2">DURABILITY EVENT (2024)</h4>
+            <p class="text-xs text-brand-textMuted">Secured 2nd position in the endurance and durability phase.</p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-red border-x border-b border-brand-borderGray shadow-sm">
+            <span class="text-3xl font-mono font-extrabold text-brand-red block mb-1">AIR 4th</span>
+            <h4 class="sofachrome-title text-xs text-brand-black mb-2">CAE SIMULATION (2024)</h4>
+            <p class="text-xs text-brand-textMuted">Recognition for finite element analysis and structural CAE modeling.</p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-black border-x border-b border-brand-borderGray shadow-sm">
+            <span class="text-3xl font-mono font-extrabold text-brand-black block mb-1">AIR 1</span>
+            <h4 class="sofachrome-title text-xs text-brand-black mb-2">BAJA VIRTUALS (2020)</h4>
+            <p class="text-xs text-brand-textMuted">Ranked #1 in BAJA Virtuals at Chitkara University, Chandigarh.</p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-red border-x border-b border-brand-borderGray shadow-sm">
+            <span class="text-3xl font-mono font-extrabold text-brand-red block mb-1">AIR 2</span>
+            <h4 class="sofachrome-title text-xs text-brand-black mb-2">PODIUM FINISH (2020)</h4>
+            <p class="text-xs text-brand-textMuted">Secured podium finish with 1st rank in Suspension and Traction.</p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-white border-t-4 border-brand-black border-x border-b border-brand-borderGray shadow-sm">
+            <span class="text-3xl font-mono font-extrabold text-brand-black block mb-1">3 AWARDS</span>
+            <h4 class="sofachrome-title text-xs text-brand-black mb-2">IIT ROPAR (2018)</h4>
+            <p class="text-xs text-brand-textMuted">Won Raftaar Award, Suspension & Traction Award, and Acceleration Award.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 6: SPONSORS -->
+    <div id="page-sponsors" class="page-view hidden">
+      <!-- Sponsors Black Header Hero -->
+      <section class="bg-brand-black text-white py-16 border-b-4 border-brand-red">
+        <div class="max-w-6xl mx-auto px-6 text-center max-w-2xl mx-auto space-y-4">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Corporate & Institutional Backing</span>
+          <h1 class="sofachrome-title text-3xl sm:text-4xl text-white">SPONSORS</h1>
+          <div class="w-16 h-1 bg-brand-red mx-auto"></div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-mono">
+            Supporting engineering ingenuity and all-terrain racing excellence at Government College of Engineering, Chhatrapati Sambhajinagar.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sponsors Grid -->
+      <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="h-32 rounded-xl bg-brand-lightGray border border-brand-borderGray flex flex-col items-center justify-center p-4 text-center hover:border-brand-red transition-all">
+              <span class="sofachrome-title text-sm text-brand-black">GECA</span>
+              <span class="text-[10px] font-mono text-zinc-500 mt-1">Host Institute</span>
+            </div>
+            <div class="h-32 rounded-xl bg-brand-lightGray border border-brand-borderGray flex flex-col items-center justify-center p-4 text-center hover:border-brand-red transition-all">
+              <span class="sofachrome-title text-sm text-brand-black">SAE INDIA</span>
+              <span class="text-[10px] font-mono text-zinc-500 mt-1">Collegiate Chapter</span>
+            </div>
+            <div class="h-32 rounded-xl bg-brand-lightGray border border-brand-borderGray flex flex-col items-center justify-center p-4 text-center hover:border-brand-red transition-all">
+              <span class="sofachrome-title text-sm text-brand-black">GECA ALUMNI</span>
+              <span class="text-[10px] font-mono text-zinc-500 mt-1">Alumni Network</span>
+            </div>
+            <div class="h-32 rounded-xl bg-brand-lightGray border border-brand-borderGray flex flex-col items-center justify-center p-4 text-center hover:border-brand-red transition-all">
+              <span class="sofachrome-title text-sm text-brand-black">INDUSTRY PARTNERS</span>
+              <span class="text-[10px] font-mono text-zinc-500 mt-1">Tooling & Materials</span>
+            </div>
+          </div>
+
+          <!-- Call to Action Box in Deep Black & Red -->
+          <div class="p-8 rounded-xl bg-brand-black text-white text-center space-y-4">
+            <h3 class="sofachrome-title text-base sm:text-lg text-white">WANT TO SPONSOR TEAM ARYANS?</h3>
+            <p class="text-xs text-zinc-300 max-w-xl mx-auto leading-relaxed">
+              Support our upcoming BAJA season and get your brand represented on our national race buggy and media channels.
+            </p>
+            <a href="mailto:teamaryans@geca.ac.in" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-brand-red text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-brand-redDark transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i> Get Sponsorship Brochure
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 7: GALLERY -->
+    <div id="page-gallery" class="page-view hidden py-20 bg-brand-lightGray">
+      <div class="max-w-7xl mx-auto px-6 space-y-10">
+        <div class="border-b-2 border-brand-black pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Archives</span>
+            <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">GALLERY</h1>
+          </div>
+          <span class="text-xs font-mono text-zinc-500">2011 TO 2023+ SEASONS</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Pithampur Endurance</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2023 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">National Phase</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2022 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Dynamic Track</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2021 ROPAR EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">AIR 2 Season</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2020 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Rockcrawler Artemis</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2019 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Triple Award Win</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2018 ROPAR EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="globe" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Global Competition</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2018 INTERNATIONAL</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Pithampur Circuit</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2017 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Endurance Run</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2016 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Suspension Tuning</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2015 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Early Evolution</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2012 EVENT</h4>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-brand-borderGray hover:border-brand-red transition-all group">
+            <div class="aspect-video rounded-lg bg-black flex flex-col items-center justify-center p-3 text-center mb-3">
+              <i data-lucide="flag" class="w-8 h-8 text-brand-red mb-1"></i>
+              <span class="text-[10px] font-mono text-zinc-400">Founding Debut</span>
+            </div>
+            <h4 class="sofachrome-title text-xs text-brand-black">2011 INAUGURAL</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 8: NEWS & UPDATES -->
+    <div id="page-news" class="page-view hidden py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-6 space-y-8">
+        <div class="border-b-2 border-brand-black pb-4">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Official Dispatches</span>
+          <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">NEWS & UPDATES</h1>
+        </div>
+
+        <div class="space-y-4">
+          <article class="p-6 rounded-xl bg-brand-lightGray border-l-4 border-brand-red border-y border-r border-brand-borderGray">
+            <div class="flex justify-between items-center text-xs font-mono font-bold mb-2">
+              <span class="text-brand-red">NATIONAL (VIRTUAL) RESULT</span>
+              <span class="text-zinc-500">2021 SEASON</span>
+            </div>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              In 2020, Team Aryans stood at 7th pole position in endurance race and achieved AIR 3. The team qualified for phase two of BAJA SAE India at Pithampur, Indore.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-xl bg-brand-lightGray border-l-4 border-brand-black border-y border-r border-brand-borderGray">
+            <div class="flex justify-between items-center text-xs font-mono font-bold mb-2">
+              <span class="text-brand-black">NATIONAL RESULT</span>
+              <span class="text-zinc-500">2020 SEASON</span>
+            </div>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              In 2020, Team Aryans stood at 7th pole position in endurance race and achieved AIR 2 with the podium finish and bagged 1st rank in Suspension and Traction.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-xl bg-brand-lightGray border-l-4 border-brand-red border-y border-r border-brand-borderGray">
+            <div class="flex justify-between items-center text-xs font-mono font-bold mb-2">
+              <span class="text-brand-red">VIRTUAL RESULT</span>
+              <span class="text-zinc-500">2020 SEASON</span>
+            </div>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              Virtuals is the first phase of BAJA SAE Competition which is also known as the design round. Artemis achieved the title of being India's First Rockcrawler and the team also bagged first award in the Sales and Marketing event.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-xl bg-brand-lightGray border-l-4 border-brand-black border-y border-r border-brand-borderGray">
+            <div class="flex justify-between items-center text-xs font-mono font-bold mb-2">
+              <span class="text-brand-black">VIRTUAL RESULT</span>
+              <span class="text-zinc-500">2019 SEASON</span>
+            </div>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              With a kick start to this season, we secured ALL INDIA RANK 1 in BAJA Virtuals 2020 held at Chitkara University, Chandigarh, qualifying for phase two at Pithampur, Indore.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-xl bg-brand-lightGray border-l-4 border-brand-red border-y border-r border-brand-borderGray">
+            <div class="flex justify-between items-center text-xs font-mono font-bold mb-2">
+              <span class="text-brand-red">INTERNATIONAL RESULT</span>
+              <span class="text-zinc-500">2018 SEASON</span>
+            </div>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              For the very first time, Team Aryans participated in BAJA SAE International. The team stood 7th in sales presentation, 10th in acceleration event, 11th in design event and 29th in the endurance race, securing an overall rank of 34 globally.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-xl bg-brand-lightGray border-l-4 border-brand-black border-y border-r border-brand-borderGray">
+            <div class="flex justify-between items-center text-xs font-mono font-bold mb-2">
+              <span class="text-brand-black">NATIONAL RESULT (IIT ROPAR)</span>
+              <span class="text-zinc-500">2018 SEASON</span>
+            </div>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+              In 2018, Team Aryans secured All India Rank of 2 held at IIT Ropar, Punjab. The team also bagged up three awards: Raftaar Award, Suspension Traction Award, and Acceleration Award.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 9: CONTACT US -->
+    <div id="page-contact" class="page-view hidden py-20 bg-brand-lightGray">
+      <div class="max-w-5xl mx-auto px-6 space-y-10">
+        <div class="border-b-2 border-brand-black pb-4 text-center max-w-2xl mx-auto">
+          <span class="text-brand-red font-mono text-xs uppercase tracking-widest font-bold">// Workshop Bay</span>
+          <h1 class="sofachrome-title text-2xl sm:text-3xl text-brand-black mt-1">CONTACT US</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-8 rounded-xl bg-white border border-brand-borderGray shadow-sm space-y-6">
+            <h3 class="sofachrome-title text-base text-brand-black">ADDRESS</h3>
+            <div class="space-y-4 text-xs font-mono text-brand-textDark">
+              <div class="flex items-start gap-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
+                <p class="leading-relaxed">
+                  Institutional Workshop,<br>
+                  Government College of Engineering,<br>
+                  Station Road, Chatrapati Sambhaji Nagar (Aurangabad),<br>
+                  Maharashtra, India 431005.
+                </p>
+              </div>
+              <div class="flex items-center gap-3 pt-3 border-t border-brand-borderGray">
+                <i data-lucide="mail" class="w-5 h-5 text-brand-red shrink-0"></i>
+                <div>
+                  <span class="text-zinc-500 block text-[10px]">EMAIL US</span>
+                  <a href="mailto:teamaryans@geca.ac.in" class="text-brand-red font-bold hover:underline">teamaryans@geca.ac.in</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="p-8 rounded-xl bg-white border border-brand-borderGray shadow-sm">
+            <h3 class="sofachrome-title text-base text-brand-black mb-4">SEND A MESSAGE</h3>
+            <form onsubmit="handleContact(event)" class="space-y-4 text-xs font-mono">
+              <div>
+                <label class="block text-zinc-600 mb-1 font-bold">Your Name</label>
+                <input type="text" required placeholder="Enter full name" class="w-full px-3 py-2 rounded border border-brand-borderGray text-brand-black focus:border-brand-red outline-none bg-zinc-50" />
+              </div>
+              <div>
+                <label class="block text-zinc-600 mb-1 font-bold">Email Address</label>
+                <input type="email" required placeholder="name@geca.ac.in" class="w-full px-3 py-2 rounded border border-brand-borderGray text-brand-black focus:border-brand-red outline-none bg-zinc-50" />
+              </div>
+              <div>
+                <label class="block text-zinc-600 mb-1 font-bold">Message</label>
+                <textarea rows="3" required placeholder="Write message..." class="w-full px-3 py-2 rounded border border-brand-borderGray text-brand-black focus:border-brand-red outline-none bg-zinc-50"></textarea>
+              </div>
+              <button type="submit" class="w-full py-2.5 rounded bg-brand-red text-white font-bold uppercase tracking-wider hover:bg-brand-redDark transition-colors flex items-center justify-center gap-2">
+                <span>Submit Message</span>
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER (Deep Racing Black with White/Red Telemetry)
+       ======================================================== -->
+  <!-- ========================================================
+       FOOTER (COMPLETE 3-COLUMN LAYOUT WITH LOGO)
+       ======================================================== -->
+  <footer class="bg-brand-black text-white py-12 text-xs font-mono border-t-4 border-brand-red">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-zinc-800">
+      
+      <!-- Column 1: Logo, Team Name & College Info -->
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <img 
+            src="assets/images/logo.png" 
+            alt="Team Aryans Logo" 
+            class="w-8 h-8 sm:w-9 sm:h-9 aspect-square object-contain shrink-0"
+            onerror="
+              if (!this.triedJpg) {
+                this.triedJpg = true;
+                this.src='assets/images/logo.jpg';
+              }
+            "
+          />
+          <span class="font-sofachrome text-xs sm:text-sm text-white font-extrabold uppercase tracking-wider leading-none">
+            TEAM ARYANS <span class="text-brand-red">RACING</span>
+          </span>
+        </div>
+        <p class="text-zinc-400 text-xs font-normal">STRIVING FOR EXCELLENCE</p>
+        <p class="text-zinc-500 text-[11px] mt-1">Government College of Engineering, Chhatrapati Sambhajinagar</p>
+      </div>
+
+      <!-- Column 2: Direct Contact -->
+      <div class="text-left md:text-center">
+        <span class="text-zinc-400 block text-[10px] uppercase font-bold tracking-widest mb-1">DIRECT CONTACT</span>
+        <a href="mailto:teamaryans@geca.ac.in" class="text-white hover:text-brand-red font-bold transition-colors">teamaryans@geca.ac.in</a>
+      </div>
+
+      <!-- Column 3: Workshop Location -->
+      <div class="text-left md:text-right">
+        <span class="text-zinc-400 block text-[10px] uppercase font-bold tracking-widest mb-1">WORKSHOP LOCATION</span>
+        <span class="text-zinc-300">Station Road, Aurangabad 431005</span>
+      </div>
+
+    </div>
+
+    <!-- Bottom Row: Copyright & Credits -->
+    <div class="max-w-7xl mx-auto px-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-zinc-500">
+      <p>© 2019–2026 Team Aryans Racing. All rights reserved.</p>
+      <p>Powered By Nocture Solutions • Edited By : Sarthak Sawji</p>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       DATA CONFIGURATION & PAGE ROUTING
+       ======================================================== -->
+  <script>
+    const SITE_DATA = {
+  branding: {
+    teamName: "Team Aryans Racing",
+    logoUrl: "assets/images/logo.jpg",
+    bannerUrl: "assets/images/banner.jpg",
+    tagline: "STRIVING FOR EXCELLENCE"
+  },
+      email: "teamaryans@geca.ac.in",
+      workshopAddress: "Institutional Workshop, Government College of Engineering, Station Road, Chatrapati Sambhaji Nagar Maharashtra, India 431005"
+    };
+
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+      const active = document.getElementById('page-' + pageId);
+      if (active) {
+        active.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update active nav link underline/color
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('nav-active'));
+      const navBtn = document.getElementById('nav-' + pageId);
+      if (navBtn) {
+        navBtn.classList.add('nav-active');
+      }
+    }
+
+    function handleContact(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent to teamaryans@geca.ac.in.");
+      e.target.reset();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
